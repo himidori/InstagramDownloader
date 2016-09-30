@@ -52,18 +52,6 @@ namespace InstagramDownloader
 
         private static InstagramImage FetchImages(string url)
         {
-            /*
-            List<string> urls = new List<string>();
-            string source = GetPageSource(url);
-            string mask = "\"standard_resolution\": {\"url\": \"([^\"]+)\"";
-            MatchCollection matches = Regex.Matches(source, mask);
-            foreach (Match m in matches)
-            {
-                urls.Add(m.Groups[1].Value);
-            }
-            return urls;
-             */
-
             string source = GetPageSource(url);
             return JsonConvert.DeserializeObject<InstagramImage>(source);
         }
